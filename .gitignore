@@ -1,7 +1,19 @@
+# Ambiente virtual
 venv/
+env/
+
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
+
+# Django
+*.log
 db.sqlite3
+media/
+
+# Variáveis de ambiente
 .env
-.idea/
+
+# Editores
 .vscode/
+.idea/
