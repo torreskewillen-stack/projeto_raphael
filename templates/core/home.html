@@ -1,0 +1,43 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Início | BellaStyle{% endblock %}
+
+{% block content %}
+
+<section class="banner">
+    <h1>Novidades da Semana</h1>
+    <p>Encontre seu estilo com descontos de até 50% OFF!</p>
+
+    <a href="{% url 'produtos' %}" class="botao">
+        Ver produtos
+    </a>
+</section>
+
+<h2 class="titulo">Destaques da loja</h2>
+
+<section class="produtos">
+
+    <div class="card-produto">
+        <div class="imagem-produto"></div>
+        <h3>Vestido Floral</h3>
+        <p class="preco">R$ 49,90</p>
+        <a href="{% url 'produto' %}" class="botao">Ver produto</a>
+    </div>
+
+    <div class="card-produto">
+        <div class="imagem-produto"></div>
+        <h3>Blusa Feminina</h3>
+        <p class="preco">R$ 39,90</p>
+        <a href="{% url 'produto' %}" class="botao">Ver produto</a>
+    </div>
+
+    <div class="card-produto">
+        <div class="imagem-produto"></div>
+        <h3>Saia Midi</h3>
+        <p class="preco">R$ 59,90</p>
+        <a href="{% url 'produto' %}" class="botao">Ver produto</a>
+    </div>
+
+</section>
+
+{% endblock %}
