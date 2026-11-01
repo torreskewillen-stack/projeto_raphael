@@ -1,0 +1,45 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Detalhes do Produto | BellaStyle{% endblock %}
+
+{% block content %}
+
+<h2 class="titulo">Detalhes do Produto</h2>
+
+<div class="card-produto">
+
+    <div class="imagem-produto"></div>
+
+    <h2>Vestido Floral</h2>
+
+    <p class="preco">R$ 49,90</p>
+
+    <p>
+        Vestido feminino estampado, confortável e perfeito
+        para diversas ocasiões.
+    </p>
+
+    <br>
+
+    <label for="quantidade">Quantidade:</label>
+
+    <input
+        type="number"
+        id="quantidade"
+        value="1"
+        min="1"
+        style="width: 70px; padding: 8px;"
+    >
+
+    <br><br>
+
+    <button
+        class="botao"
+        type="button"
+        onclick="adicionarCarrinho('Vestido Floral', 49.90)">
+        Adicionar à sacola
+    </button>
+
+</div>
+
+{% endblock %}

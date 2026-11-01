@@ -5,3 +5,9 @@ def home(request):
 
 def produtos(request):
     return render(request, 'core/produtos.html')
+
+def produto(request):
+    return render(request, 'core/produto.html')
+
+def carrinho(request):
+    return render(request, 'core/carrinho.html')
