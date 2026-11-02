@@ -1,6 +1,5 @@
 from django.shortcuts import render
 
-<<<<<<< HEAD
 def home(request):
     return render(request, 'core/home.html')
 
@@ -21,6 +20,6 @@ def cadastro(request):
 
 def conta(request):
     return render(request, 'core/conta.html')
-=======
-# Create your views here.
->>>>>>> origin/main
+
+def contato(request):
+    return render(request, 'core/contato.html')
