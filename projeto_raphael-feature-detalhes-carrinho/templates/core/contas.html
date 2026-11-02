@@ -1,0 +1,45 @@
+{% extends 'core/base.html' %}
+
+
+{% block title %}Minha Conta | BellaStyle{% endblock %}
+
+
+{% block content %}
+
+
+<h2 class="titulo">Minha Conta</h2>
+
+
+<div class="formulario">
+
+
+    <h3>Bem-vinda à BellaStyle!</h3>
+
+
+    <p style="margin-top: 15px;">
+        Aqui você poderá acompanhar suas informações,
+        seus pedidos e seus dados pessoais.
+    </p>
+
+
+    <br>
+
+
+    <p><strong>Nome:</strong> Cliente BellaStyle</p>
+
+
+    <p><strong>E-mail:</strong> cliente@email.com</p>
+
+
+    <br>
+
+
+    <a href="{% url 'produtos' %}" class="botao">
+        Continuar comprando
+    </a>
+
+
+</div>
+
+
+{% endblock %}
