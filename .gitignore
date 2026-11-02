@@ -1,7 +1,10 @@
 # Ambiente virtual
 venv/
 env/
+<<<<<<< HEAD
 venv
+=======
+>>>>>>> origin/main
 
 # Python
 __pycache__/
