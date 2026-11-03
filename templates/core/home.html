@@ -1,0 +1,44 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Início | BellaStyle{% endblock %}
+
+{% block content %}
+
+<section class="banner">
+    <h1>Novidades da Semana</h1>
+    <p>Encontre seu estilo com descontos de até 50% OFF!</p>
+
+    <a href="{% url 'produtos' %}" class="botao">
+        Ver produtos
+    </a>
+</section>
+
+<h2 class="titulo">Destaques da loja</h2>
+
+<section class="produtos">
+    {% for produto in produtos %}
+
+        <div class="card-produto">
+
+            {% if produto.imagem %}
+                <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}">
+            {% endif %}
+
+            <h3>{{ produto.nome }}</h3>
+
+            <p class="preco">R$ {{ produto.preco }}</p>
+
+            <a href="{% url 'produto' produto.id %}" class="botao">
+                Ver produto
+            </a>
+
+        </div>
+
+    {% empty %}
+
+        <p>Nenhum produto em destaque cadastrado.</p>
+
+    {% endfor %}
+</section>
+
+{% endblock %}

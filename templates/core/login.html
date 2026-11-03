@@ -1,0 +1,57 @@
+{% extends 'core/base.html' %}
+
+
+{% block title %}Login | BellaStyle{% endblock %}
+
+
+{% block content %}
+
+
+<h2 class="titulo">Entrar na minha conta</h2>
+
+
+<div class="formulario">
+
+
+    <form method="POST">
+        {% csrf_token %}
+
+
+        <label for="email">E-mail:</label>
+        <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Digite seu e-mail"
+            required
+        >
+
+
+        <label for="senha">Senha:</label>
+        <input
+            type="password"
+            id="senha"
+            name="senha"
+            placeholder="Digite sua senha"
+            required
+        >
+
+
+        <button type="submit" class="botao">
+            Entrar
+        </button>
+
+
+    </form>
+
+
+    <p style="text-align: center; margin-top: 20px;">
+        Ainda não possui uma conta?
+        <a href="{% url 'cadastro' %}">Cadastre-se</a>
+    </p>
+
+
+</div>
+
+
+{% endblock %}

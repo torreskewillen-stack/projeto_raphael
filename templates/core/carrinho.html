@@ -1,0 +1,33 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Carrinho | BellaStyle{% endblock %}
+
+{% block content %}
+
+<h2 class="titulo">Minha Sacola</h2>
+
+<div id="itens-carrinho">
+    <!-- Os produtos serão carregados pelo JavaScript -->
+</div>
+
+<div class="resumo-carrinho">
+
+    <p>
+        Subtotal:
+        <strong id="subtotal">R$ 0,00</strong>
+    </p>
+
+    <p>
+        Total:
+        <strong id="total">R$ 0,00</strong>
+    </p>
+
+    <br>
+
+    <a href="{% url 'produtos' %}" class="botao">
+        Continuar comprando
+    </a>
+
+</div>
+
+{% endblock %}
