@@ -55,3 +55,4 @@ class MensagemContato(models.Model):
         verbose_name = 'Mensagem de contato'
         verbose_name_plural = 'Mensagens de contato'
         ordering = ['-enviada_em']
+

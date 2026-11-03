@@ -29,3 +29,4 @@ class MensagemContatoAdmin(admin.ModelAdmin):
     list_display = ('nome', 'email', 'enviada_em')
     search_fields = ('nome', 'email')
     readonly_fields = ('enviada_em',)
+
