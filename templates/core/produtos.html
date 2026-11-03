@@ -8,35 +8,27 @@
 <h2 class="titulo">Nossos Produtos</h2>
 
 <section class="produtos">
-
-    <div class="card-produto">
-        <div class="imagem-produto"></div>
-        <h3>Vestido Floral</h3>
-        <p class="preco">R$ 49,90</p>
-        <a href="{% url 'produto' %}" class="botao">Ver detalhes</a>
-    </div>
-
-    <div class="card-produto">
-        <div class="imagem-produto"></div>
-        <h3>Blusa Feminina</h3>
-        <p class="preco">R$ 39,90</p>
-        <a href="{% url 'produto' %}" class="botao">Ver detalhes</a>
-    </div>
-
-    <div class="card-produto">
-        <div class="imagem-produto"></div>
-        <h3>Saia Midi</h3>
-        <p class="preco">R$ 59,90</p>
-        <a href="{% url 'produto' %}" class="botao">Ver detalhes</a>
-    </div>
-
-    <div class="card-produto">
-        <div class="imagem-produto"></div>
-        <h3>Calça Jeans</h3>
-        <p class="preco">R$ 79,90</p>
-        <a href="{% url 'produto' %}" class="botao">Ver detalhes</a>
-    </div>
-
+    {% for produto in produtos %}
+        <div class="card-produto">
+            <div class="imagem-produto">
+                {% if produto.imagem %}
+                    <img src="{{ produto.imagem.url }}"
+                         alt="{{ produto.nome }}"
+                         style="width: 100%; height: 100%; object-fit: cover;">
+                {% endif %}
+            </div>
+            <h3>{{ produto.nome }}</h3>
+            <p>{{ produto.descricao }}</p>
+            <p class="preco">
+                R$ {{ produto.preco }}
+            </p>
+            <a href="{% url 'produto' %}" class="botao">
+                Ver detalhes
+            </a>
+        </div>
+    {% empty %}
+        <p>Nenhum produto cadastrado no momento.</p>
+    {% endfor %}
 </section>
 
 {% endblock %}

@@ -1,13 +1,20 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+# from .models import Produto
 
 def home(request):
+    produtos = Produto.objects.filter(ativo=True,destaque=True )
+    return render(request, 'core/home.html', {'produtos': produtos})
     return render(request, 'core/home.html')
 
 def produtos(request):
+    lista_produtos = Produto.objects.filter(ativo=True)
+    return render(request, 'core/produtos.html',{'produtos': lista_produtos})
     return render(request, 'core/produtos.html')
 
 def produto(request):
-    return render(request, 'core/produto.html')
+    produto = get_object_or_404(Produto, id=id, ativo=True)
+    return render(request, 'core/produto.html', {'prodouto': produto})
+    return render (request, 'core/produto.html')
 
 def carrinho(request):
     return render(request, 'core/carrinho.html')

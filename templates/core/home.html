@@ -16,28 +16,29 @@
 <h2 class="titulo">Destaques da loja</h2>
 
 <section class="produtos">
+    {% for produto in produtos %}
 
-    <div class="card-produto">
-        <div class="imagem-produto"></div>
-        <h3>Vestido Floral</h3>
-        <p class="preco">R$ 49,90</p>
-        <a href="{% url 'produto' %}" class="botao">Ver produto</a>
-    </div>
+        <div class="card-produto">
 
-    <div class="card-produto">
-        <div class="imagem-produto"></div>
-        <h3>Blusa Feminina</h3>
-        <p class="preco">R$ 39,90</p>
-        <a href="{% url 'produto' %}" class="botao">Ver produto</a>
-    </div>
+            {% if produto.imagem %}
+                <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}">
+            {% endif %}
 
-    <div class="card-produto">
-        <div class="imagem-produto"></div>
-        <h3>Saia Midi</h3>
-        <p class="preco">R$ 59,90</p>
-        <a href="{% url 'produto' %}" class="botao">Ver produto</a>
-    </div>
+            <h3>{{ produto.nome }}</h3>
 
+            <p class="preco">R$ {{ produto.preco }}</p>
+
+            <a href="{% url 'produto' produto.id %}" class="botao">
+                Ver produto
+            </a>
+
+        </div>
+
+    {% empty %}
+
+        <p>Nenhum produto em destaque cadastrado.</p>
+
+    {% endfor %}
 </section>
 
 {% endblock %}
